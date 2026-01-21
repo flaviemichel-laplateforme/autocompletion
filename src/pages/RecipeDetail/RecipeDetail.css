@@ -2,7 +2,7 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    color: #333;
+    color: #1a1a1a;
 }
 
 .back-btn {
@@ -28,7 +28,8 @@
 .recipe-header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: #ffffff;
+    font-weight: 800;
 }
 
 .tag {
@@ -42,7 +43,7 @@
 
 .tag.category {
     background: #2c3e50;
-    color: #d4af37;
+    color: #ffffff;
     border: 1px solid #d4af37;
 }
 
@@ -64,6 +65,12 @@
     width: 100%;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-section h2 {
+    color: #7f8c8d;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .ingredients-grid {
@@ -98,8 +105,8 @@
 }
 
 .instructions-section h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #eee;
+    color: #7f8c8d;
+    font-weight: 700;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -108,6 +115,37 @@
 @media (max-width: 768px) {
     .recipe-content {
         grid-template-columns: 1fr;
-        /* Une seule colonne sur mobile */
+        gap: 30px;
+    }
+
+    .recipe-header h1 {
+        font-size: 2rem;
+    }
+
+    .back-btn {
+        margin-bottom: 15px;
+    }
+
+    .ingredients-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-detail-container {
+        padding: 15px;
+    }
+
+    .recipe-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+
+    .instructions-section {
+        padding: 20px;
     }
 }

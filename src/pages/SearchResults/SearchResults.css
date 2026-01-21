@@ -6,8 +6,10 @@
 
 .results-page h2 {
     text-align: center;
-    color: #333;
+    color: #1a1a1a;
     margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2rem;
 }
 
 /* Le Loader */
@@ -62,7 +64,8 @@
 .card-content h3 {
     margin: 0 0 10px 0;
     font-size: 1.1rem;
-    color: #2c3e50;
+    color: #1a1a1a;
+    font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -82,7 +85,7 @@
 
 .category-tag {
     background-color: #2c3e50;
-    color: #d4af37;
+    color: #ffffff;
     border: 1px solid #d4af37;
 }
 
@@ -90,4 +93,46 @@
     background-color: #34495e;
     color: #ffffff;
     border: 1px solid #7f8c8d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .results-page {
+        padding: 15px;
+    }
+
+    .results-page h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .recipes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-page {
+        padding: 10px;
+    }
+
+    .results-page h2 {
+        font-size: 1.3rem;
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+
+    .category-tag,
+    .area-tag {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
 }

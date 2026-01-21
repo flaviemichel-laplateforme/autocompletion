@@ -154,10 +154,25 @@
 /* Responsive */
 @media (max-width: 600px) {
     .search-bar {
-        flex-direction: column;
+        gap: 6px;
+    }
+
+    .search-bar input {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 
     .search-bar button {
-        width: 100%;
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .suggestion-item {
+        padding: 10px 15px;
+    }
+
+    .thumb-mini {
+        width: 40px;
+        height: 40px;
     }
 }
