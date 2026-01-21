@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './RecipeDetail.css';
-import { translate, translateIngredient, categoryTranslations, areaTranslations } from '../../utils/translations';
 
 function RecipeDetail() {
     const { id } = useParams(); // Récupère l'ID depuis l'URL (ex: 52772)
@@ -59,8 +58,8 @@ function RecipeDetail() {
             <div className="recipe-header">
                 <h1>{recipe.strMeal}</h1>
                 <div className="tags">
-                    <span className="tag category">{translate(recipe.strCategory, categoryTranslations)}</span>
-                    <span className="tag area">{translate(recipe.strArea, areaTranslations)}</span>
+                    <span className="tag category">{recipe.strCategory}</span>
+                    <span className="tag area">{recipe.strArea}</span>
                 </div>
             </div>
 
@@ -75,7 +74,7 @@ function RecipeDetail() {
                         {ingredientsList.map((item, index) => (
                             <li key={index}>
                                 <span className="measure">{item.measure}</span>
-                                <span className="name">{translateIngredient(item.name)}</span>
+                                <span className="name">{item.name}</span>
                             </li>
                         ))}
                     </ul>
