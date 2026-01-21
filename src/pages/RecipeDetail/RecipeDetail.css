@@ -41,13 +41,15 @@
 }
 
 .tag.category {
-    background: #ffeaa7;
-    color: #d35400;
+    background: #2c3e50;
+    color: #d4af37;
+    border: 1px solid #d4af37;
 }
 
 .tag.area {
-    background: #74b9ff;
-    color: #0984e3;
+    background: #34495e;
+    color: #ffffff;
+    border: 1px solid #7f8c8d;
 }
 
 /* Layout Grid pour Image + Ingrédients */
@@ -79,12 +81,12 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    border-left: 4px solid #ff7675;
+    border-left: 4px solid #d4af37;
 }
 
 .measure {
     font-weight: bold;
-    color: #d63031;
+    color: #b87333;
 }
 
 .instructions-section {

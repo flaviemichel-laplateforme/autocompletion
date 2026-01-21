@@ -13,17 +13,19 @@
 .search-bar input {
     flex: 1;
     padding: 8px 16px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #d4af37;
     border-radius: 20px;
     font-size: 0.9rem;
     outline: none;
     transition: all 0.3s ease;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
 }
 
 .search-bar input:focus {
-    border-color: #e67e22;
-    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+    background: #ffffff;
 }
 
 .search-bar input::placeholder {
@@ -32,15 +34,15 @@
 
 .search-bar button {
     padding: 8px 20px;
-    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-    color: white;
+    background: linear-gradient(135deg, #d4af37 0%, #b87333 100%);
+    color: #2c3e50;
     border: none;
     border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
     white-space: nowrap;
 }
 
@@ -96,8 +98,9 @@
 }
 
 .suggestion-item:hover {
-    background: linear-gradient(90deg, #fff5e6 0%, #ffffff 100%);
+    background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 100%);
     padding-left: 25px;
+    border-left: 3px solid #d4af37;
 }
 
 .suggestion-item.starts-with {

@@ -1,10 +1,10 @@
 .home {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 66px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #fff5e6 0%, #ffffff 50%, #fef5e7 100%);
-    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #ecf0f1 100%);
+    padding: 60px 20px;
 }
 
 .hero-section {
@@ -30,37 +30,19 @@
     font-size: 4.5rem;
     font-weight: 800;
     margin: 0 0 20px 0;
-    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -2px;
-    text-shadow: 0 4px 20px rgba(230, 126, 34, 0.2);
 }
 
 .subtitle {
     font-size: 1.3rem;
-    color: #666;
+    color: #7f8c8d;
     margin: 0 0 50px 0;
     font-weight: 300;
     line-height: 1.6;
-}
-
-/* Animation du titre */
-.main-title {
-    animation: titleBounce 1s ease;
-}
-
-@keyframes titleBounce {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
 }
 
 /* Responsive */
