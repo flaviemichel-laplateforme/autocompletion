@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './RecipeDetail.css';
-import { translate, translateIngredient, translateInstructions, categoryTranslations, areaTranslations } from '../../utils/translations';
+import { translate, translateIngredient, categoryTranslations, areaTranslations } from '../../utils/translations';
 
 function RecipeDetail() {
     const { id } = useParams(); // Récupère l'ID depuis l'URL (ex: 52772)
@@ -9,7 +9,6 @@ function RecipeDetail() {
 
     const [recipe, setRecipe] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [translatedInstructions, setTranslatedInstructions] = useState('');
 
     // Fonction pour transformer les 20 ingrédients séparés en un beau tableau
     const getIngredients = (meal) => {
@@ -34,14 +33,7 @@ function RecipeDetail() {
             try {
                 const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
                 const data = await response.json();
-                const recipeData = data.meals[0];
-                setRecipe(recipeData);
-
-                // Traduire les instructions en français
-                if (recipeData && recipeData.strInstructions) {
-                    const translated = await translateInstructions(recipeData.strInstructions);
-                    setTranslatedInstructions(translated);
-                }
+                setRecipe(data.meals[0]); // L'API renvoie un tableau, on prend le premier élément
             } catch (error) {
                 console.error("Erreur:", error);
             } finally {
@@ -93,7 +85,7 @@ function RecipeDetail() {
             <div className="instructions-section">
                 <h2>Instructions</h2>
                 {/* On remplace les sauts de ligne par des paragraphes pour la lisibilité */}
-                {(translatedInstructions || recipe.strInstructions).split(/\r?\n/).map((step, index) => (
+                {recipe.strInstructions.split('\r\n').map((step, index) => (
                     step.trim() && <p key={index}>{step}</p>
                 ))}
             </div>

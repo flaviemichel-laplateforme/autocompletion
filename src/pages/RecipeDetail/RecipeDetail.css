@@ -1,0 +1,111 @@
+.recipe-detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.recipe-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.recipe-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin: 0 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.tag.category {
+    background: #ffeaa7;
+    color: #d35400;
+}
+
+.tag.area {
+    background: #74b9ff;
+    color: #0984e3;
+}
+
+/* Layout Grid pour Image + Ingrédients */
+.recipe-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.image-section img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ingredients-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Grille responsive */
+    gap: 10px;
+}
+
+.ingredients-grid li {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid #ff7675;
+}
+
+.measure {
+    font-weight: bold;
+    color: #d63031;
+}
+
+.instructions-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    line-height: 1.8;
+}
+
+.instructions-section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .recipe-content {
+        grid-template-columns: 1fr;
+        /* Une seule colonne sur mobile */
+    }
+}
