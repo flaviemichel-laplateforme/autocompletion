@@ -10,6 +10,7 @@ function SearchResults() {
 
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState('all');
 
     useEffect(() => {
         const fetchRecipes = async () => {
@@ -33,6 +34,14 @@ function SearchResults() {
         }
     }, [query]); // On relance si 'query' change
 
+    // Filtrer les recettes par catégorie
+    const filteredRecipes = selectedCategory === 'all'
+        ? recipes
+        : recipes.filter(recipe => recipe.strCategory === selectedCategory);
+
+    // Obtenir toutes les catégories uniques des résultats
+    const categories = ['all', ...new Set(recipes.map(recipe => recipe.strCategory))];
+
     return (
         <div className="results-page">
             <h2>Résultats pour "{query}"</h2>
@@ -45,9 +54,32 @@ function SearchResults() {
                 <p className="no-results">Aucune recette trouvée pour "{query}". Essayez un autre terme !</p>
             )}
 
+            {/* Filtres par catégorie */}
+            {!loading && recipes.length > 0 && (
+                <div className="filters-container">
+                    <h3>Filtrer par catégorie :</h3>
+                    <div className="category-filters">
+                        {categories.map(category => (
+                            <button
+                                key={category}
+                                className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
+                                onClick={() => setSelectedCategory(category)}
+                            >
+                                {category === 'all' ? 'Toutes' : translate(category, categoryTranslations)}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Message si aucun résultat après filtrage */}
+            {!loading && recipes.length > 0 && filteredRecipes.length === 0 && (
+                <p className="no-results">Aucune recette {selectedCategory !== 'all' && `de la catégorie "${translate(selectedCategory, categoryTranslations)}"`} trouvée.</p>
+            )}
+
             {/* Grille de résultats */}
             <div className="recipes-grid">
-                {recipes.map(meal => (
+                {filteredRecipes.map(meal => (
                     // Chaque carte est un lien vers la page détail (Job 02)
                     <Link to={`/recipe/${meal.idMeal}`} key={meal.idMeal} className="recipe-card">
                         <div className="card-image">
