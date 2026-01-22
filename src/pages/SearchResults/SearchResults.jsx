@@ -54,23 +54,7 @@ function SearchResults() {
                 <p className="no-results">Aucune recette trouvée pour "{query}". Essayez un autre terme !</p>
             )}
 
-            {/* Filtres par catégorie */}
-            {!loading && recipes.length > 0 && (
-                <div className="filters-container">
-                    <h3>Filtrer par catégorie :</h3>
-                    <div className="category-filters">
-                        {categories.map(category => (
-                            <button
-                                key={category}
-                                className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
-                                onClick={() => setSelectedCategory(category)}
-                            >
-                                {category === 'all' ? 'Toutes' : translate(category, categoryTranslations)}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            )}
+
 
             {/* Message si aucun résultat après filtrage */}
             {!loading && recipes.length > 0 && filteredRecipes.length === 0 && (
