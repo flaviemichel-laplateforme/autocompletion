@@ -5,6 +5,11 @@
     color: #1a1a1a;
 }
 
+
+.info-section h2 {
+    color: rgb(249, 248, 248);
+}
+
 .back-btn {
     background: none;
     border: 1px solid #ccc;
@@ -28,7 +33,7 @@
 .recipe-header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #1a1a1a;
+    color: #f1f0f0;
     font-weight: 800;
 }
 
@@ -99,7 +104,7 @@
 }
 
 .instructions-section h2 {
-    color: #2c3e50;
+    color: #232425;
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
     margin-bottom: 20px;

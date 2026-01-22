@@ -70,6 +70,10 @@
     animation: slideDown 0.3s ease;
 }
 
+.suggestion-item starts-with {
+    color: #000000;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -105,6 +109,7 @@
 
 .suggestion-item.starts-with {
     font-weight: 500;
+    color: #666
 }
 
 .suggestion-item.contains {
