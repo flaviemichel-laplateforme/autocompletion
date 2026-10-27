@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import './RecipeDetail.css';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import { getMealById } from '../../services/mealApi';
-import { translate, categoryTranslations, areaTranslations } from '../../utils/translations';
+import { translate, translateIngredient, categoryTranslations, areaTranslations } from '../../utils/translations';
 
 // Fonction pour transformer les 20 ingrédients séparés en un beau tableau
 const getIngredients = (meal) => {
@@ -96,7 +96,7 @@ function RecipeDetail() {
                         {ingredientsList.map((item, index) => (
                             <li key={index}>
                                 <span className="measure">{item.measure}</span>
-                                <span className="name">{item.name}</span>
+                                <span className="name">{translateIngredient(item.name)}</span>
                             </li>
                         ))}
                     </ul>

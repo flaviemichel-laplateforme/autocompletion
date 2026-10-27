@@ -105,6 +105,36 @@ main:focus {
   font-weight: 600;
 }
 
+/* Réserve la hauteur pendant le chargement d'une fiche : évite le saut de mise en page (CLS) */
+.detail-loader,
+.detail-error {
+  min-height: 70vh;
+  margin: 0;
+  padding-top: 50px;
+}
+
+.not-found {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.not-found h1 {
+  color: var(--color-primary);
+}
+
+.not-found-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
 /* Respect du réglage système "réduire les animations" */
 @media (prefers-reduced-motion: reduce) {
 

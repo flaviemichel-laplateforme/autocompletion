@@ -4,6 +4,8 @@ Application web de recherche de recettes développée en **React** dans le cadre
 
 Elle interroge l'API publique [TheMealDB](https://www.themealdb.com/api.php) et propose une recherche avec suggestions en temps réel, un filtrage par catégorie et une fiche détaillée pour chaque recette.
 
+🔗 **Démo en ligne : [autocompletion1.vercel.app](https://autocompletion1.vercel.app)**
+
 ## ✨ Fonctionnalités
 
 - **Autocomplétion** : dès 2 caractères, des suggestions s'affichent, séparées en deux groupes (« commence par » puis « contient »), avec miniature du plat.
@@ -83,7 +85,7 @@ Le LCP des pages dépend surtout de l'API et des images distantes (TheMealDB), h
 Prérequis : Node.js 18+.
 
 ```bash
-git clone <url-du-depot>
+git clone https://github.com/flaviemichel-laplateforme/autocompletion.git
 cd autocompletion
 npm install
 npm run dev      # http://localhost:5173

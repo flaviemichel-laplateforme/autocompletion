@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 // Code splitting : ces pages ne sont téléchargées qu'au moment où on les visite
 const SearchResults = lazy(() => import('./pages/SearchResults/SearchResults'));
 const RecipeDetail = lazy(() => import('./pages/RecipeDetail/RecipeDetail'));
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                         <Route path='/' element={<Home />} />
                         <Route path='/search' element={<SearchResults />} />
                         <Route path='/recipe/:id' element={<RecipeDetail />} />
+                        <Route path='*' element={<NotFound />} />
                     </Routes>
                 </Suspense>
             </main>
