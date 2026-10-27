@@ -2,11 +2,16 @@
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     padding: 8px 0;
-    position: sticky;
     /* Le header reste collé en haut quand on scrolle */
+    position: sticky;
     top: 0;
-    z-index: 100;
     /* Il passe au-dessus du reste */
+    z-index: 100;
+}
+
+/* Fond sombre : anneau de focus blanc */
+.header :focus-visible {
+    outline-color: #ffffff;
 }
 
 .header-content {
@@ -17,32 +22,31 @@
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    height: 50px;
+    min-height: 50px;
 }
 
 .logo {
     font-size: 1.6rem;
     font-weight: 700;
     text-decoration: none;
-    color: #ffffff !important;
+    color: #ffffff;
+    /* Le logo ne rétrécit pas */
     flex-shrink: 0;
     line-height: 1.2;
     display: flex;
     align-items: center;
     letter-spacing: 1px;
-    /* Le logo ne rétrécit pas */
 }
 
 .logo-highlight {
-    color: #d4af37 !important;
     /* Or pour le deuxième "Miam" */
+    color: #d4af37;
 }
 
 .header-search-container {
+    /* La barre prend l'espace disponible, mais pas plus de 400px */
     flex-grow: 1;
-    /* La barre prend l'espace disponible */
     max-width: 400px;
-    /* Mais pas plus de 400px */
 }
 
 /* Responsive : Tablette */
@@ -60,24 +64,25 @@
     }
 }
 
-/* Responsive : Mobile */
+/* Responsive : Mobile — logo au-dessus, barre de recherche pleine largeur */
 @media (max-width: 600px) {
     .header {
-        padding: 4px 0;
+        padding: 6px 0 10px;
     }
 
     .header-content {
-        gap: 10px;
-        height: 45px;
+        flex-wrap: wrap;
+        gap: 8px;
         padding: 0 15px;
     }
 
     .logo {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        min-height: 44px;
     }
 
     .header-search-container {
-        flex-grow: 1;
+        flex: 1 0 100%;
         max-width: 100%;
     }
 }
